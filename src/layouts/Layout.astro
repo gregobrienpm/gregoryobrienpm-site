@@ -1,0 +1,156 @@
+---
+export interface Props {
+  title?: string;
+  current?: number; // 0=Build, 1=Watch, 2=Think, 3=Stream, 4=Meet; -1 = Home (no active tab)
+}
+const { title = "Greg O'Brien", current = -1 } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<meta name="generator" content={Astro.generator} />
+<style is:global>
+:root{
+--bg:#fbfaf8; --surface:transparent; --ink:#16181c; --body:#3a3f47; --muted:#6b7280;
+--edge:#16181c; --rule:rgba(22,24,28,.18); --ruleSoft:rgba(22,24,28,.12); --dash:rgba(22,24,28,.45);
+--accent:#25408f; --tileA:#25408f; --tileAInk:rgba(255,255,255,.85); --tileB:#c2cbe4; --tileBInk:#2b3350;
+--stripe:repeating-linear-gradient(135deg,#f2f0ec 0 8px,#e8e5df 8px 16px);
+--pill:rgba(251,250,248,.82); --pillShadow:rgba(22,24,28,.07);
+--capsule:#16181c; --navInk:#16181c; --navInkOn:#fbfaf8; --hoverWash:rgba(22,24,28,.06);
+}
+[data-theme="dark"]{
+--bg:#14161a; --surface:#191c21; --ink:#eae7e0; --body:#b6bac1; --muted:#8f959e;
+--edge:#3d424a; --rule:rgba(234,231,224,.16); --ruleSoft:rgba(234,231,224,.11); --dash:rgba(234,231,224,.3);
+--accent:#93aaea; --tileA:#2c3f7c; --tileAInk:rgba(255,255,255,.88); --tileB:#5d6a8c; --tileBInk:#f2f4f9;
+--stripe:repeating-linear-gradient(135deg,#1b1e24 0 8px,#22262d 8px 16px);
+--pill:rgba(25,28,33,.86); --pillShadow:rgba(0,0,0,.4);
+--capsule:#eae7e0; --navInk:#eae7e0; --navInkOn:#14161a; --hoverWash:rgba(234,231,224,.08);
+}
+a,a:visited{color:inherit}
+body{margin:0}
+.h-ink:hover{color:var(--ink)}
+.h-card:hover{border-color:var(--accent)}
+.h-ul:hover{text-decoration:underline}
+.h-dim:hover{opacity:.82}
+.h-wash:hover{background:var(--hoverWash)}
+[data-theme="dark"] #theme-dot{background:var(--accent);border:none;box-shadow:inset -3.5px -1px 0 0 var(--bg)}
+@media (max-width:900px){
+[data-hero]{grid-template-columns:1fr !important}
+[data-hero-left]{border-right:0 !important;padding:56px 40px 0 !important}
+[data-hero-right]{padding:28px 40px 56px !important}
+[data-hero-left] h1{font-size:clamp(34px,6.4vw,54px) !important}
+}
+@media (max-width:820px){
+[data-nav]{box-sizing:border-box !important;flex-wrap:wrap !important;justify-content:center !important;align-items:center !important;row-gap:10px !important;column-gap:12px !important;border-radius:28px !important;padding:12px 16px !important;max-width:calc(100vw - 32px)}
+[data-nav-links]{flex:1 1 0 !important;min-width:min-content !important;flex-wrap:nowrap !important;justify-content:center !important;gap:2px !important}
+[data-nav]>button{flex:none !important;margin-left:auto !important}
+[data-nav]>a:first-child{flex:none !important}
+[data-nav-links]>a{width:auto !important;padding:6px 6px !important;color:var(--ink) !important}
+[data-nav-links]>a[aria-current="page"]{border-bottom:1px solid var(--accent) !important;border-radius:0 !important}
+[data-cap]{display:none !important}
+}
+@media (max-width:476px){
+[data-nav]>a:first-child{flex:1 0 100% !important;text-align:center !important}
+}
+@media (max-width:500px){
+[data-hero-left]{padding:40px 24px 0 !important}
+[data-hero-right]{padding:24px 24px 44px !important}
+}
+@media (max-width:900px){
+[data-cards]{grid-template-columns:1fr !important}
+[data-cards]>*{grid-column:auto !important}
+[data-split],[data-pair]{grid-template-columns:1fr !important;background-image:none !important;gap:34px !important}
+[data-split][style*="padding: 14px 0"]{gap:26px !important}
+[data-pair]>*{border-right:0 !important}
+[data-note-row]{grid-template-columns:1fr !important;gap:18px !important}
+[data-note-row]>div:first-child{height:200px !important}
+[data-shot]{height:auto !important;aspect-ratio:16 / 9}
+[style*="padding: 0px 56px 44px"]{padding:0 40px 44px !important}
+[style*="padding: 14px 56px 44px"]{padding:14px 40px 44px !important}
+[style*="padding: 34px 56px 44px"]{padding:34px 40px 44px !important}
+[style*="padding: 40px 56px 24px"]{padding:40px 40px 24px !important}
+[style*="padding: 40px 56px 0px"]{padding:40px 40px 0 !important}
+[style*="padding: 44px 56px 14px;"],[style*="padding: 44px 56px 14px"]{padding:44px 40px 14px !important}
+[style*="padding: 14px 56px 52px;"],[style*="padding: 14px 56px 52px"]{padding:14px 40px 52px !important}
+[style*="padding: 40px 56px 34px;"],[style*="padding: 40px 56px 34px"]{padding:40px 40px 34px !important}
+[style*="padding: 40px 56px 14px;"],[style*="padding: 40px 56px 14px"]{padding:40px 40px 14px !important}
+[style*="padding: 14px 56px 44px;"],[style*="padding: 14px 56px 44px"]{padding:14px 40px 44px !important}
+[style*="padding: 40px 56px 0;"],[style*="padding: 40px 56px 0px"]{padding:40px 40px 0 !important}
+[style*="padding: 34px 56px 44px;"],[style*="padding: 34px 56px 44px"]{padding:34px 40px 44px !important}
+[style*="padding: 40px 56px 24px;"],[style*="padding: 40px 56px 24px"]{padding:40px 40px 24px !important}
+[style*="padding: 0 56px 44px;"],[style*="padding: 0px 56px 44px"]{padding:0 40px 44px !important}
+[style*="padding: 14px 56px 20px;"],[style*="padding: 14px 56px 20px"]{padding:14px 40px 20px !important}
+[style*="padding: 20px 56px 14px;"],[style*="padding: 20px 56px 14px"]{padding:20px 40px 14px !important}
+[style*="padding: 16px 56px;"],[style*="padding: 16px 56px;"]{padding:16px 40px !important}
+[style*="padding: 40px 56px;"]{padding:40px 40px !important}
+[style*="padding: 0px 56px;"]{padding:0 40px !important}
+}
+@media (max-width:600px){
+[data-stream-grid]{grid-template-columns:1fr !important;column-gap:0 !important}
+}
+@media (max-width:500px){
+[style*="padding: 44px 56px 14px;"],[style*="padding: 44px 56px 14px"]{padding:44px 24px 14px !important}
+[style*="padding: 14px 56px 52px;"],[style*="padding: 14px 56px 52px"]{padding:14px 24px 52px !important}
+[style*="padding: 40px 56px 34px;"],[style*="padding: 40px 56px 34px"]{padding:40px 24px 34px !important}
+[style*="padding: 40px 56px 14px;"],[style*="padding: 40px 56px 14px"]{padding:40px 24px 14px !important}
+[style*="padding: 14px 56px 44px;"],[style*="padding: 14px 56px 44px"]{padding:14px 24px 44px !important}
+[style*="padding: 40px 56px 0;"],[style*="padding: 40px 56px 0px"]{padding:40px 24px 0 !important}
+[style*="padding: 34px 56px 44px;"],[style*="padding: 34px 56px 44px"]{padding:34px 24px 44px !important}
+[style*="padding: 40px 56px 24px;"],[style*="padding: 40px 56px 24px"]{padding:40px 24px 24px !important}
+[style*="padding: 0 56px 44px;"],[style*="padding: 0px 56px 44px"]{padding:0 24px 44px !important}
+[style*="padding: 14px 56px 20px;"],[style*="padding: 14px 56px 20px"]{padding:14px 24px 20px !important}
+[style*="padding: 20px 56px 14px;"],[style*="padding: 20px 56px 14px"]{padding:20px 24px 14px !important}
+[style*="padding: 16px 56px;"],[style*="padding: 16px 56px;"]{padding:16px 24px !important}
+[style*="padding: 40px 56px;"]{padding:40px 24px !important}
+[style*="padding: 0px 56px;"]{padding:0 24px !important}
+[data-note-row]>div:first-child{height:170px !important}
+[style*="padding: 0px 56px 44px"]{padding:0 24px 44px !important}
+[style*="padding: 14px 56px 44px"]{padding:14px 24px 44px !important}
+[style*="padding: 34px 56px 44px"]{padding:34px 24px 44px !important}
+[style*="padding: 40px 56px 24px"]{padding:40px 24px 24px !important}
+[style*="padding: 40px 56px 0px"]{padding:40px 24px 0 !important}
+}
+</style>
+</head>
+<body>
+<div style="min-height:100vh;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif">
+
+<div style="display:flex;justify-content:center;padding:26px 0 0">
+<nav data-nav="1" style="position:relative;display:flex;align-items:center;gap:22px;padding:9px 14px 9px 20px;border-radius:999px;background:var(--pill);backdrop-filter:blur(10px);border:1px solid var(--edge);box-shadow:0 2px 14px var(--pillShadow)">
+<a href="/" style="font-family:Newsreader,serif;font-size:17px;letter-spacing:-.01em;color:var(--ink);text-decoration:none">Greg O'Brien</a>
+<div data-nav-links="1" style="position:relative;display:flex;align-items:center;gap:6px">
+<div data-cap="1" style="position:absolute;top:0;bottom:0;left:0;width:var(--capW,0);opacity:var(--capO,0);transform:translateX(var(--capX,0));border-radius:999px;background:var(--capsule);pointer-events:none;transition:transform .34s cubic-bezier(.22,.8,.24,1), background .25s ease"></div>
+<a href="/build" data-n="0" aria-current={current === 0 ? 'page' : undefined} style="position:relative;text-decoration:none;font-size:13px;letter-spacing:.02em;padding:6px 0;width:58px;text-align:center;border-radius:999px;color:var(--n0,var(--navInk))">Build</a>
+<a href="/watch" data-n="1" aria-current={current === 1 ? 'page' : undefined} style="position:relative;text-decoration:none;font-size:13px;letter-spacing:.02em;padding:6px 0;width:64px;text-align:center;border-radius:999px;color:var(--n1,var(--navInk))">Watch</a>
+<a href="/think" data-n="2" aria-current={current === 2 ? 'page' : undefined} style="position:relative;text-decoration:none;font-size:13px;letter-spacing:.02em;padding:6px 0;width:60px;text-align:center;border-radius:999px;color:var(--n2,var(--navInk))">Think</a>
+<a href="/stream" data-n="3" aria-current={current === 3 ? 'page' : undefined} style="position:relative;text-decoration:none;font-size:13px;letter-spacing:.02em;padding:6px 0;width:70px;text-align:center;border-radius:999px;color:var(--n3,var(--navInk))">Stream</a>
+<a href="/meet" data-n="4" aria-current={current === 4 ? 'page' : undefined} style="position:relative;text-decoration:none;font-size:13px;letter-spacing:.02em;padding:6px 0;width:56px;text-align:center;border-radius:999px;color:var(--n4,var(--navInk))">Meet</a>
+</div>
+<button id="theme-toggle" class="h-wash" aria-label="Toggle light or dark mode" title="Toggle light or dark mode" style="display:grid;place-items:center;width:28px;height:28px;padding:0;border-radius:999px;border:1px solid var(--edge);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s ease">
+<span id="theme-dot" style="display:block;width:11px;height:11px;border-radius:999px;background:transparent;border:1.5px solid var(--accent);box-shadow:none;transition:all .25s ease"></span>
+</button>
+</nav>
+</div>
+
+<slot />
+
+<div style="border-top:1px solid var(--edge);padding:16px 56px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted)"><span>Greg O'Brien</span><span>2026</span></div>
+</div>
+
+<script define:vars={{ CURRENT: current }}>
+const GEO=[{left:0,width:58},{left:64,width:64},{left:134,width:60},{left:200,width:70},{left:276,width:56}];
+const root=document.documentElement, links=[...document.querySelectorAll('[data-n]')], navEl=document.querySelector('[data-nav]');
+function show(i){ if(i<0){root.style.setProperty('--capO','0');} else {const g=GEO[i];root.style.setProperty('--capW',g.width+'px');root.style.setProperty('--capX',g.left+'px');root.style.setProperty('--capO','1');} for(let n=0;n<5;n++) root.style.setProperty('--n'+n, n===i?'var(--navInkOn)':'var(--navInk)'); }
+links.forEach((a,i)=>a.addEventListener('mouseenter',()=>show(i)));
+navEl.addEventListener('mouseleave',()=>show(CURRENT));
+show(CURRENT);
+const saved=localStorage.getItem('greg-theme'); if(saved==='dark') root.setAttribute('data-theme','dark');
+document.getElementById('theme-toggle').addEventListener('click',()=>{const d=root.getAttribute('data-theme')==='dark';if(d){root.removeAttribute('data-theme');localStorage.setItem('greg-theme','light');}else{root.setAttribute('data-theme','dark');localStorage.setItem('greg-theme','dark');}});
+</script>
+</body>
+</html>

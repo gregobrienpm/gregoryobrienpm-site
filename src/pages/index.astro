@@ -1,14 +1,88 @@
 ---
+import Layout from '../layouts/Layout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Greg O'Brien</title>
-  </head>
-  <body>
-    <h1>Greg O'Brien</h1>
-    <p>Scaffold homepage — the real design from Claude Design has not been ported in yet (Phase 4).</p>
-    <p><a href="/blog/">Blog</a></p>
-  </body>
-</html>
+<Layout title="Greg O'Brien" current={-1}>
+<div data-screen-label="Home">
+<div data-hero="1" style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--edge);border-bottom:1px solid var(--rule);margin-top:38px">
+<div data-hero-left="1" style="padding:96px 56px 84px;border-right:1px solid var(--rule)">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Greg O'Brien</div>
+<h1 style="margin:18px 0 0;font-family:Newsreader,serif;font-weight:400;font-size:54px;line-height:1.1;letter-spacing:-.02em">I'm a product manager<br>and a <span style="font-style:italic">maker</span>.</h1>
+</div>
+<div data-hero-right="1" style="padding:calc(96px + 32.5px) 56px 84px;display:flex;flex-direction:column;gap:20px">
+<p style="margin:0;font-size:16px;line-height:1.65;max-width:46ch;color:var(--body)">Over a decade in AI and digital innovation, after studying product and philosophy. My day job is building enterprise AI agents at Mastercard. On the side, I build my own, and think about how AI should be developed safely and ethically.</p>
+<div style="display:flex;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--muted)"><span>Based in Dublin</span><span>·</span><a href="#" style="color:var(--accent);text-decoration:none;transition:opacity .2s ease" class="h-ul">Email</a><a href="#" style="color:var(--accent);text-decoration:none" class="h-ul">LinkedIn</a></div>
+</div>
+</div>
+
+<div style="padding:44px 56px 14px;display:flex;justify-content:space-between;align-items:baseline">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Build</span>
+<a href="/build" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">All work →</a>
+</div>
+<div style="padding:14px 56px 52px">
+<a href="/build/stackchan" style="display:block;border:1px solid var(--edge);text-decoration:none;color:var(--ink);transition:border-color .2s ease" class="h-card">
+<div style="aspect-ratio:16 / 9;background:var(--tileA);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--tileAInk);letter-spacing:.08em">[ STACKCHAN PHOTO ]</span></div>
+<div style="padding:18px 20px;border-top:1px solid var(--edge);display:flex;justify-content:space-between;gap:40px">
+<div><div style="font-size:17px;font-weight:600">Stackchan</div><p style="margin:7px 0 0;font-size:14px;line-height:1.55;color:var(--body);max-width:70ch">An ESP32 desktop companion robot, currently getting taught to have opinions — an experiment in giving an LLM a face and a personality.</p></div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);white-space:nowrap">Personal · Hardware</span>
+</div>
+</a>
+</div>
+
+<div data-pair="1" style="border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;background:linear-gradient(var(--rule),var(--rule)) 50% 0/1px 100% no-repeat">
+<div style="padding:40px 56px 34px;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:baseline">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Watch</span>
+<a href="/watch" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">All videos →</a>
+</div>
+<a href="/watch" style="display:flex;flex-direction:column;flex:1;margin-top:18px;text-decoration:none;color:var(--ink);border:1px solid var(--edge);transition:border-color .2s ease" class="h-card">
+<div style="flex:none;height:110px;background:var(--stripe);display:flex;align-items:flex-end;padding:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--muted)">[ VIDEO THUMBNAIL ]</span></div>
+<div style="flex:1;padding:18px 20px;border-top:1px solid var(--edge)">
+<div style="min-height:2.5em;font-family:Newsreader,serif;font-size:25px;line-height:1.25">"What actually makes something an agent?"</div>
+<p style="margin:9px 0 0;font-size:14px;line-height:1.6;color:var(--body);max-width:52ch">A plain-language look at agents, autonomy, and where the hype gets ahead of the reality.</p>
+</div>
+</a>
+</div>
+<div style="padding:40px 56px 34px;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:baseline">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Think</span>
+<a href="/think" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">All notes →</a>
+</div>
+<a href="/think/why-agent-is-doing-too-much-work-as-a-word" style="display:flex;flex-direction:column;flex:1;margin-top:18px;text-decoration:none;color:var(--ink);border:1px solid var(--edge);transition:border-color .2s ease" class="h-card">
+<div style="flex:none;height:110px;background:var(--stripe);display:flex;align-items:flex-end;padding:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--muted)">[ AGENT PHOTO ]</span></div>
+<div style="flex:1;padding:18px 20px;border-top:1px solid var(--edge)">
+<div style="min-height:2.5em;font-family:Newsreader,serif;font-size:25px;line-height:1.25">Why "agent" is doing too much work as a word</div>
+<p style="margin:9px 0 0;font-size:14px;line-height:1.6;color:var(--body);max-width:52ch">Half the industry means "chatbot," the other half means something closer to software with judgment. That gap is the whole story.</p>
+</div>
+</a>
+</div>
+</div>
+
+<div style="border-top:1px solid var(--rule);padding:40px 56px 34px">
+<div style="display:flex;justify-content:space-between;align-items:baseline">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Stream</span>
+<a href="/stream" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">All entries →</a>
+</div>
+<div data-stream-grid="1" style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;column-gap:56px">
+<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Sep 15</span><span>Leadership begins where explanation becomes recommendation.</span></div>
+<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Sep 11</span><span>Ownership sounds like a decision followed by a next step.</span></div>
+<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Sep 08</span><span>Complexity is real, but it does not excuse confusion.</span></div>
+<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Sep 04</span><span>Simplicity is often the final result of difficult thinking.</span></div>
+</div>
+</div>
+
+<div data-split="1" style="border-top:1px solid var(--rule);padding:40px 56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
+<div>
+<div style="display:flex;justify-content:space-between;align-items:baseline">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Meet</span>
+<a href="/meet" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">About me →</a>
+</div>
+<p style="margin:18px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">I like meeting other makers and thinkers, and talking about the things we're building. If that sounds like your world too, if you need someone for a stage, or think I'd be useful for a project you're working on, please reach out.</p>
+</div>
+<div style="border:1px solid var(--edge);padding:26px;background:var(--surface)">
+<div style="font-family:Newsreader,serif;font-size:24px">Get in touch</div>
+<p style="margin:10px 0 18px;font-size:14px;line-height:1.6;color:var(--body)">Happy to talk about agents, product, or anything half-built.</p>
+<div style="display:flex;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px"><a href="#" style="text-decoration:none;padding:8px 14px;background:var(--ink);color:var(--bg);transition:opacity .2s ease" class="h-dim">Email</a><a href="#" style="text-decoration:none;padding:8px 14px;color:var(--ink);border:1px solid var(--edge);transition:border-color .2s ease" class="h-card">LinkedIn</a></div>
+</div>
+</div>
+</div>
+</Layout>
