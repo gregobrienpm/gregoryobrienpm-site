@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Build — Greg O'Brien" current={0}>
+<div data-screen-label="Work archive">
+<div data-hero="1" style="border-top:1px solid var(--edge);border-bottom:1px solid var(--rule);margin-top:38px;display:grid;grid-template-columns:1fr 1fr">
+<div data-hero-left="1" style="padding:96px 56px 84px;border-right:1px solid var(--rule)">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Build</div>
+<h1 style="margin:18px 0 0;font-family:Newsreader,serif;font-weight:400;font-size:54px;line-height:1.1;letter-spacing:-.02em">Some things<br>I've <span style="font-style:italic">built</span>.</h1>
+</div>
+<div data-hero-right="1" style="padding:calc(96px + 32.5px) 56px 84px;display:flex;flex-direction:column;gap:20px">
+<p style="margin:0;font-size:16px;line-height:1.65;max-width:46ch;color:var(--body)">Things I build on my own time. My day job is enterprise AI, where safety, security and ethics matter as much as the technology. These projects help me understand, learn, and experiment with technology.</p>
+<div style="display:flex;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--muted)"><span>3 projects</span><span>·</span><span>2026</span></div>
+</div>
+</div>
+<div style="padding:40px 56px 14px;display:flex;justify-content:space-between;align-items:baseline">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Current</span>
+<a href="/" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">Home →</a>
+</div>
+<div data-cards="1" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:14px 56px 44px">
+<a href="/build/stackchan" style="border:1px solid var(--edge);grid-column:span 2;text-decoration:none;color:var(--ink);transition:border-color .2s ease" class="h-card">
+<div style="aspect-ratio:16 / 9;background:var(--tileA);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--tileAInk);letter-spacing:.08em">[ STACKCHAN PHOTO ]</span></div>
+<div style="padding:18px 20px;border-top:1px solid var(--edge);display:flex;justify-content:space-between;gap:40px">
+<div><div style="font-size:17px;font-weight:600">Stackchan</div><p style="margin:7px 0 0;font-size:14px;line-height:1.55;color:var(--body);max-width:70ch">An ESP32 desktop companion robot, currently getting taught to have opinions — an experiment in giving an LLM a face and a personality.</p></div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);white-space:nowrap">Personal · Hardware</span>
+</div>
+</a>
+<a href="/build/stackchan" style="border:1px solid var(--edge);text-decoration:none;color:var(--ink);transition:border-color .2s ease" class="h-card">
+<div style="aspect-ratio:16 / 9;background:var(--tileB);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--tileBInk);letter-spacing:.08em">[ BUILT BEFORE LUNCH PHOTO ]</span></div>
+<div style="padding:18px 20px;border-top:1px solid var(--edge)">
+<div style="display:flex;justify-content:space-between;gap:14px"><div style="font-size:17px;font-weight:600">Built Before Lunch</div><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);white-space:nowrap">Personal · Prototype</span></div>
+<p style="margin:7px 0 0;font-size:14px;line-height:1.55;color:var(--body)">A personal challenge: idea to working AI app in a single day, no team, no roadmap.</p>
+</div>
+</a>
+<a href="/build/stackchan" style="border:1px solid var(--edge);text-decoration:none;color:var(--ink);transition:border-color .2s ease" class="h-card">
+<div style="aspect-ratio:16 / 9;background:var(--stripe);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.08em">[ GAME BOY COMPOSER PHOTO ]</span></div>
+<div style="padding:18px 20px;border-top:1px solid var(--edge)">
+<div style="display:flex;justify-content:space-between;gap:14px"><div style="font-size:17px;font-weight:600">Game Boy Composer</div><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);white-space:nowrap">Personal · Generative</span></div>
+<p style="margin:7px 0 0;font-size:14px;line-height:1.55;color:var(--body)">A procedural music generator writing original chiptune melodies for real Game Boy hardware.</p>
+</div>
+</a>
+</div>
+</div>
+</Layout>
