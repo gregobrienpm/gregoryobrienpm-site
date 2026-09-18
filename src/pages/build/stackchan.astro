@@ -1,36 +1,36 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Stackchan — Greg O'Brien" current={0}>
+<Layout title="Stackchan — Greg O\'Brien" current={0}>
 <div data-screen-label="Work case study">
 <div style="border-top:1px solid var(--edge);margin-top:38px;padding:40px 56px 0">
 <a href="/build" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">← All work</a>
 </div>
 <div style="padding:34px 56px 44px;border-bottom:1px solid var(--rule)">
-<div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted)">Personal · [Type — placeholder]</div>
-<h1 style="margin:18px 0 0;font-family:Newsreader,serif;font-weight:400;font-size:54px;line-height:1.1;letter-spacing:-.02em;max-width:22ch">[Project name]</h1>
-<p style="margin:18px 0 0;font-size:16px;line-height:1.65;max-width:46ch;color:var(--body)">[One or two sentences on what this project is and why you built it — placeholder.]</p>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted)">Personal · Hardware</div>
+<h1 style="margin:18px 0 0;font-family:Newsreader,serif;font-weight:400;font-size:54px;line-height:1.1;letter-spacing:-.02em;max-width:22ch">Stackchan</h1>
+<p style="margin:18px 0 0;font-size:16px;line-height:1.65;max-width:46ch;color:var(--body)">An ESP32 desktop companion robot, currently getting taught to have opinions — an experiment in giving an LLM a face and a personality.</p>
 </div>
 <div style="padding:40px 56px 24px"><div style="border:1px solid var(--edge)"><div data-shot="1" style="height:260px;background:var(--tileA);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--tileAInk);letter-spacing:.08em">[ PROJECT SCREEN OR PHOTO ]</span></div></div></div>
 <div data-split="1" style="padding:0 56px 44px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
 <div>
 <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">The problem</div>
-<p style="margin:18px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">[Two or three paragraphs on the starting position — placeholder. What sparked the idea, what didn't exist yet, and what you wanted to learn or prove by building it.]</p>
+<p style="margin:18px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">I wanted something on my desk that felt less like a chatbot window and more like a small creature with opinions. Most AI demos live inside a browser tab — I wanted to see if giving one a face, a body, and a fixed personality changed how it felt to talk to, even though the underlying model was the same one anyone could get from an API.</p>
 <div style="margin-top:34px;font-size:17px;font-weight:600">What I did</div>
-<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">[Placeholder — the specific decisions you made: what you built, what you left out, and why.]</p>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">Stackchan started as an ESP32 board with a small screen for a face, built on an open hardware pattern originally designed for smart-speaker style projects. I wired it up to a language model, gave it a name and a personality brief instead of a generic assistant prompt, and started teaching it to hold opinions instead of hedging every answer.</p>
 <div style="margin-top:26px;font-size:17px;font-weight:600">How it works</div>
-<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">[Placeholder — the shape of the thing, in plain language.]</p>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">The ESP32 handles the face — expressions, a bit of movement — while the actual thinking happens through an LLM call. The personality lives in the prompt, not the hardware: consistent opinions, a few running jokes, and instructions to disagree with me occasionally instead of being endlessly agreeable.</p>
 <div style="margin-top:26px;border:1px dashed var(--dash)"><div data-shot="1" style="height:190px;background:var(--stripe);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.08em">[ DIAGRAM OR SCREEN ]</span></div></div>
-<div style="margin-top:34px;font-family:Newsreader,serif;font-size:25px;line-height:1.25;max-width:52ch">"[A pull quote — one sentence worth lifting out of the write-up.]"</div>
+<div style="margin-top:34px;font-family:Newsreader,serif;font-size:25px;line-height:1.25;max-width:52ch">"It’s amazing how much personality changes when you take an assistant that’s designed to hedge and just tell it: pick a side."</div>
 <div style="margin-top:34px;font-size:17px;font-weight:600">Where it stands</div>
-<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">[Placeholder — outcome, current status, what's next.]</p>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body);max-width:70ch">Still very much a work in progress. Right now it’s better at holding a consistent personality than at being useful for anything in particular — which is honestly the more interesting problem to me at the moment.</p>
 </div>
 <div style="border:1px solid var(--edge);padding:26px;background:var(--surface)">
 <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Detail</div>
 <div style="margin-top:16px;display:flex;flex-direction:column">
-<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Status</span><span>[Status — placeholder]</span></div>
-<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Built with</span><span>[Stack or tools — placeholder]</span></div>
-<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Timeframe</span><span>[Dates — placeholder]</span></div>
+<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Status</span><span>In progress</span></div>
+<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--ruleSoft);font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Built with</span><span>ESP32, a small OLED face, an LLM for personality</span></div>
+<div style="display:grid;grid-template-columns:84px 1fr;gap:18px;padding:11px 0;font-size:14.5px;line-height:1.6;color:var(--body)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">Timeframe</span><span>2026 — ongoing</span></div>
 </div>
 </div>
 </div>
@@ -38,14 +38,6 @@ import Layout from '../../layouts/Layout.astro';
 <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Next</span>
 <a href="/build" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">All work →</a>
 </div>
-<div style="padding:14px 56px 44px">
-<a href="/build/stackchan" style="border:1px solid var(--edge);display:block;text-decoration:none;color:var(--ink);transition:border-color .2s ease" class="h-card">
-<div data-shot="1" style="height:190px;background:var(--tileB);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--tileBInk);letter-spacing:.08em">[ NEXT PROJECT PHOTO ]</span></div>
-<div style="padding:18px 20px;border-top:1px solid var(--edge);display:flex;justify-content:space-between;gap:40px">
-<div><div style="font-size:17px;font-weight:600">[Next project title — placeholder]</div><p style="margin:7px 0 0;font-size:14px;line-height:1.55;color:var(--body);max-width:70ch">[One-line teaser for the next project — placeholder.]</p></div>
-<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);white-space:nowrap">Personal · [Type — placeholder]</span>
-</div>
-</a>
-</div>
+<div style="padding:14px 56px 44px;font-size:14px;line-height:1.55;color:var(--muted)">More write-ups coming as new projects are finished.</div>
 </div>
 </Layout>
