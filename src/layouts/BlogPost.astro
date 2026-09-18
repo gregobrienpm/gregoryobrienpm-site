@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+}
+
+const { title, description, pubDate, updatedDate, tags = [] } = Astro.props;
+
+const dateFormat: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <article>
+      <h1>{title}</h1>
+      <p>
+        <time datetime={pubDate.toISOString()}>{pubDate.toLocaleDateString('en-IE', dateFormat)}</time>
+        {updatedDate && (
+          <>
+            {' '}· Updated{' '}
+            <time datetime={updatedDate.toISOString()}>{updatedDate.toLocaleDateString('en-IE', dateFormat)}</time>
+          </>
+        )}
+      </p>
+      {tags.length > 0 && (
+        <ul>
+          {tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+      )}
+      <slot />
+    </article>
+  </body>
+</html>
