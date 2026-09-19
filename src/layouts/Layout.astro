@@ -10,6 +10,7 @@ const { title = "Greg O'Brien", current = -1 } = Astro.props;
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script is:inline>(function(){try{if(localStorage.getItem('greg-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <title>{title}</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -150,7 +151,6 @@ function show(i){ if(i<0){root.style.setProperty('--capO','0');} else {const g=G
 links.forEach((a,i)=>a.addEventListener('mouseenter',()=>show(i)));
 navEl.addEventListener('mouseleave',()=>show(CURRENT));
 show(CURRENT);
-const saved=localStorage.getItem('greg-theme'); if(saved==='dark') root.setAttribute('data-theme','dark');
 document.getElementById('theme-toggle').addEventListener('click',()=>{const d=root.getAttribute('data-theme')==='dark';if(d){root.removeAttribute('data-theme');localStorage.setItem('greg-theme','light');}else{root.setAttribute('data-theme','dark');localStorage.setItem('greg-theme','dark');}});
 </script>
 </body>
