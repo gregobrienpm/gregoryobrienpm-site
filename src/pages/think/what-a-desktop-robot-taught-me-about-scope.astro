@@ -1,18 +1,15 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import BlogPost from '../../layouts/BlogPost.astro';
 ---
-<Layout title="What a desktop robot taught me about scope — Greg O\'Brien" current={2}>
-<div data-screen-label="Note">
-<div style="border-top:1px solid var(--edge);margin-top:38px;padding:40px 56px 0">
-<a href="/think" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">← All notes</a>
-</div>
-<div style="padding:34px 56px 44px;border-bottom:1px solid var(--rule)">
-<div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted)">Jul 2026</div>
-<h1 style="margin:18px 0 0;font-family:Newsreader,serif;font-weight:400;font-size:54px;line-height:1.1;letter-spacing:-.02em;max-width:22ch">What a desktop robot taught me about <span style="font-style:italic">scope</span></h1>
-<p style="margin:18px 0 0;font-size:16px;line-height:1.65;max-width:46ch;color:var(--body)">A small hardware project turned into a lesson about restraint. The best version of Stackchan does one thing, not ten.</p>
-</div>
-<div style="padding:40px 56px 24px"><div style="border:1px solid var(--edge)"><div data-shot="1" style="aspect-ratio:16/9;background:var(--stripe);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--muted)">[ AGENT PHOTO ]</span></div></div></div>
-<div style="padding:0 56px 44px;max-width:70ch">
+<BlogPost
+  title="What a desktop robot taught me about scope — Greg O'Brien"
+  date="Jul 2026"
+  subtitle="A small hardware project turned into a lesson about restraint. The best version of Stackchan does one thing, not ten."
+  nextHref="/think/product-management-is-applied-philosophy"
+  nextTitle="Product management is applied philosophy"
+  nextDate="Jun 2026"
+>
+<Fragment slot="heading">What a desktop robot taught me about <span style="font-style:italic">scope</span></Fragment>
 <p style="margin:0;font-size:15.5px;line-height:1.7;color:var(--body)">I wanted Stackchan to do everything — talk to me, remind me of things, control other stuff on my desk, maybe read my calendar out loud in the mornings. Within about two weeks I’d built a small creature that did five things badly instead of one thing well.</p>
 <p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">This is an old lesson wearing a new costume. I’ve watched product teams do exactly this with enterprise agents — try to make the first version handle every edge case instead of nailing the core interaction — and I still fell for it on a project with no stakeholders except me and no deadline except my own patience.</p>
 <div style="margin-top:34px;font-size:17px;font-weight:600">What I cut</div>
@@ -22,13 +19,4 @@ import Layout from '../../layouts/Layout.astro';
 <div style="margin-top:26px;border:1px dashed var(--dash)"><div data-shot="1" style="height:190px;background:var(--stripe);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.08em">[ OPTIONAL DIAGRAM ]</span></div></div>
 <div style="margin-top:34px;font-size:17px;font-weight:600">The nugget</div>
 <p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">If you can’t describe what your thing does in one sentence without an “and,” it isn’t ready to be judged yet. Cut until it is.</p>
-</div>
-<div style="border-top:1px solid var(--rule);padding:40px 56px 14px;display:flex;justify-content:space-between;align-items:baseline">
-<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Next note</span>
-<a href="/think" style="font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s ease" class="h-ink">All notes →</a>
-</div>
-<div style="padding:14px 56px 44px;max-width:70ch">
-<a href="/think/product-management-is-applied-philosophy" style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-bottom:1px solid var(--ruleSoft);text-decoration:none;color:var(--ink);transition:color .2s ease" class="h-accent"><span style="font-family:Newsreader,serif;font-size:23px;line-height:1.3">Product management is applied philosophy</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);white-space:nowrap">Jun 2026</span></a>
-</div>
-</div>
-</Layout>
+</BlogPost>
