@@ -1,0 +1,24 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+<BlogPost
+  title={"Jev and the case for a model that doesn't talk — Greg O'Brien"}
+  date="23 Sep 2026"
+  subtitle="Most of an agent's work is small judgement calls. TypeSafe has built a model for exactly that, and I think the idea is bigger than the product."
+  nextHref="/think/why-agent-is-doing-too-much-work-as-a-word"
+  nextTitle='Why "agent" is doing too much work as a word'
+  nextDate="Aug 2026"
+>
+<Fragment slot="heading">Jev and the case for a model that doesn't <span style="font-style:italic">talk</span></Fragment>
+<p style="margin:0;font-size:15.5px;line-height:1.7;color:var(--body)">Most of what an enterprise agent does in a day is small stuff: which tool to call next, whether an action is allowed, whether a query is about billing or something technical. For the past couple of years we've been handing every one of those calls to a frontier model, letting it write a paragraph, then parsing the paragraph for a single word.</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">TypeSafe's Jev, launched on 15 September, is built for exactly those calls. It doesn't generate text at all. You send it a state and a few typed questions, and it sends back a choice, a score or a yes/no, each with a confidence number attached. Its founder, Diogo Almeida, worked on RLHF at OpenAI, so this is someone who helped make models good at talking to us deciding that software needs something else.</p>
+<div style="margin-top:34px;font-size:17px;font-weight:600">Why I think it matters</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Cost is the obvious part. VentureBeat puts it at $0.042 per million input tokens, with output free and answers back in somewhere between 70 and 500 milliseconds. At that price you stop rationing checks and put one in front of every tool call. The part I care about more is the confidence number. If you're building agents that earn autonomy gradually, a score on every decision is the lever you've been missing: clear cases go through, borderline ones go to a person. Developers seem to agree. Vercel said about 13% of its paid AI Gateway teams were running Jev within a day of launch.</p>
+<div style="margin-top:34px;font-family:Newsreader,serif;font-size:25px;line-height:1.25;max-width:52ch">"We've been paying a novelist to tick boxes."</div>
+<div style="margin-top:34px;font-size:17px;font-weight:600">Where I'm less sure</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">The big speed and cost multiples come from TypeSafe's own tests. To their credit, their technical notes say the workflows were built by their own team and the results probably sit at the high end. More worrying for anyone in a regulated business, TypeSafe's limitations page accepts that injected or deliberately misleading text can shift Jev's answer. In one published test, a fake "pre-approved" field pulled the block probability on a destructive command from 0.76 down to 0.48. And the confidence figure is a margin, not the probability that Jev is right, which matters a lot if you plan to set escalation thresholds against it.</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">The early integrators seem to get this. LangChain's middleware deliberately keeps tool output away from Jev, so content an agent has fetched can't approve its own execution. That's the pattern I'd copy. Jev sits inside the harness, the hard rules stay hard, and anything involving money or anything that can't be undone still goes to a human.</p>
+<div style="margin-top:26px;border:1px dashed var(--dash)"><div data-shot="1" style="height:190px;background:var(--stripe);display:flex;align-items:flex-end;padding:20px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.08em">[ OPTIONAL DIAGRAM ]</span></div></div>
+<div style="margin-top:34px;font-size:17px;font-weight:600">The nugget</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">So, game changer? The idea is. Splitting the model that thinks from the model that decides is the most useful change to agent design I've seen this year, and I'd bet most enterprise stacks have a decision layer within two years. Jev itself is eight days old and still has to show it holds up outside its own benchmarks. If you want to try it, pick one high-volume, low-stakes decision like routing, pin the model version, throw some hostile text at it and log everything.</p>
+</BlogPost>

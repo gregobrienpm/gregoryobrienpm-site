@@ -72,3 +72,51 @@ Two families, one monospace. Newsreader (400) for anything editorial — hero, f
 - All tokens, hover classes, media queries, nav markup, theme-toggle script and footer live in `src/layouts/Layout.astro`. Every page wraps its content in `<Layout current={N}>` where `N` is 0 (Build) through 4 (Meet), or `-1` for Home/pages with no nav tab.
 - Hover states in the original design used inline `style-hover="…"` (a mockup-tool-only attribute); these became real CSS classes: `.h-ink`, `.h-card`, `.h-ul`, `.h-dim`, `.h-wash`.
 - Page-switcher `onClick` handlers became real `<a href>`s matching Astro's file-based routes (`/build`, `/watch`, `/think`, `/stream`, `/meet`, plus detail routes like `/build/[slug]`).
+
+## Voice (working draft)
+
+Status: first pass, written 23 Sep 2026 from the three published Think notes. Greg is still refining this, so treat it as guidance rather than a locked spec, and flag anything that seems off rather than quietly working around it.
+
+### Who's talking
+
+One person, first person, writing to peers. A product leader who builds things on the side and is comfortable saying what he thinks. Warm and direct, never salesy. The reader is assumed to be smart and busy.
+
+### Shape of a Think note
+
+- Roughly 350–550 words. If it's longer, it's probably two notes.
+- Title in sentence case, with one word in italic in the H1. Subtitle is one or two sentences that state the argument, not tease it.
+- Open in the middle of the idea. No scene-setting, no "In today's fast-moving world".
+- Two or three short sections with plain headings ("Where I'm less sure", not "Key Considerations").
+- One pull quote, and it must be Greg's own line, not a source quote.
+- Close with "The nugget" or "The plain version": one practical takeaway the reader can use this week.
+
+### Sentences
+
+- Contractions, plain verbs, everyday metaphors ("a workflow wearing an agent's coat").
+- Vary sentence length naturally. Short sentences are for emphasis, not a rhythm to repeat.
+- Say where you stand. Opinions are marked as opinions ("I think", "I'd bet") and facts are attributed.
+- Hedge once, where it's real. Don't pad every claim with caveats.
+
+### Sources
+
+Name the outlet or person in the sentence ("VentureBeat puts it at…", "one analyst told CIO.com…"). No reference lists. Prefer primary or well-established outlets, and say when a number is a vendor's own. Quote sparingly and keep quotes short.
+
+### Spelling and conventions
+
+British/Irish English throughout: -ise and -isation (prioritise, organisation), colour, behaviour, favourite, centre, programme (but "program" for software), judgement, licence (noun), defence, travelled, modelling. Dates in full everywhere a post date appears (post page, Think archive, "next note"): "23 Sep 2026", since there can be more than one note a month. Single spaced em dashes are fine, but use them sparingly.
+
+### Things that make it read as machine-written
+
+Avoid these, even when they sound punchy:
+
+- "It's not X, it's Y" and "That's the point." constructions used as a rhythm.
+- Stacks of three: three fragments, three adjectives, three rhetorical questions.
+- One-line paragraphs for drama ("Enough said.").
+- Bold labels at the start of paragraphs, and bulleted pros and cons inside a note.
+- Stock words and phrases: delve, landscape, game-changer (unless it's the question being tested), unlock, leverage, robust, seamless, "here's the thing", "let's dive in", "at the end of the day".
+- Sign-offs that ask for engagement ("Happy to be argued with", "Let me know your thoughts").
+- Summarising what the note has just said.
+
+### Quick check before publishing
+
+Read it aloud. If a sentence is one Greg wouldn't say across a table, rewrite it. Check every number has a named source, every opinion is clearly his, and the spelling is British/Irish.
