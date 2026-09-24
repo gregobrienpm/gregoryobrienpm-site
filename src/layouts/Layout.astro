@@ -17,7 +17,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
-<script is:inline>(function(){try{if(localStorage.getItem('greg-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+<script is:inline>(function(){try{var d=localStorage.getItem('greg-theme')==='dark';var r=document.documentElement;if(d)r.setAttribute('data-theme','dark');r.style.colorScheme=d?'dark':'light';r.style.backgroundColor=d?'#14161a':'#fbfaf8';}catch(e){}})();</script>
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
@@ -175,7 +175,7 @@ links.forEach((a,i)=>a.addEventListener('mouseenter',()=>show(i)));
 navEl.addEventListener('mouseleave',()=>show(CURRENT));
 show(CURRENT);
 const yearEl=document.querySelector('[data-year]'); if(yearEl) yearEl.textContent=new Date().getFullYear();
-document.getElementById('theme-toggle').addEventListener('click',()=>{const d=root.getAttribute('data-theme')==='dark';if(d){root.removeAttribute('data-theme');localStorage.setItem('greg-theme','light');}else{root.setAttribute('data-theme','dark');localStorage.setItem('greg-theme','dark');}});
+document.getElementById('theme-toggle').addEventListener('click',()=>{const d=root.getAttribute('data-theme')==='dark';if(d){root.removeAttribute('data-theme');localStorage.setItem('greg-theme','light');root.style.colorScheme='light';root.style.backgroundColor='#fbfaf8';}else{root.setAttribute('data-theme','dark');localStorage.setItem('greg-theme','dark');root.style.colorScheme='dark';root.style.backgroundColor='#14161a';}});
 </script>
 </body>
 </html>
