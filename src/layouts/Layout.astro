@@ -16,6 +16,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
 <script is:inline>(function(){try{if(localStorage.getItem('greg-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <title>{title}</title>
 <meta name="description" content={description} />
@@ -54,6 +55,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 --capsule:#eae7e0; --navInk:#eae7e0; --navInkOn:#14161a; --hoverWash:rgba(234,231,224,.08);
 }
 a,a:visited{color:inherit}
+html,body{background:var(--bg)}
 body{margin:0}
 .h-ink:hover{color:var(--ink)}
 .h-card:hover{border-color:var(--accent)}
