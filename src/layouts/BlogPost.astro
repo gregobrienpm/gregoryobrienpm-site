@@ -17,7 +17,7 @@ interface Props {
 
 const { title, date, subtitle, heroSrc, heroAlt, heroWidth, heroHeight, nextHref, nextTitle, nextDate, current = 2 } = Astro.props;
 ---
-<Layout title={title} current={current}>
+<Layout title={title} description={subtitle} current={current}>
 <div data-screen-label="Note">
 <div style="border-top:1px solid var(--edge);margin-top:38px">
 <div style="max-width:880px;margin:0 auto;padding:40px 56px 0">
