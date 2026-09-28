@@ -1,0 +1,23 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+<BlogPost
+  title={"Telemetry is how an agent shows its working — Greg O'Brien"}
+  date="28 Sep 2026"
+  subtitle="An agent that can't show its working shouldn't be trusted with more. Telemetry is the record of why it did what it did, and most teams still add it last."
+  nextHref="/think/jev-and-the-case-for-a-model-that-doesnt-talk"
+  nextTitle="Jev and the case for a model that doesn't talk"
+  nextDate="23 Sep 2026"
+>
+<Fragment slot="heading">Telemetry is how an agent shows its <span style="font-style:italic">working</span></Fragment>
+<p style="margin:0;font-size:15.5px;line-height:1.7;color:var(--body)">At school the right answer was never enough. You had to show your working. Agents need the same rule. Telemetry is the data a running system sends back about itself: what it did, when, how long it took and what it cost. For an agent the most useful form is the trace, a timeline of one run from the request coming in, through every model call and tool call, to the answer going out. Each step is a span, nested under the step that started it, so you can read a run the way a teacher reads the margin of an exam paper.</p>
+<div style="margin-top:34px;font-size:17px;font-weight:600">Why agents need more of it</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Ordinary software, given the same input, does the same thing every time. Anthropic's engineers, writing about their multi-agent research system, note that agents "are non-deterministic between runs, even with identical prompts", and say it was adding full production tracing that finally let them work out why agents failed. Without a trace, a bad answer is just a bad answer. With one, you can see the agent picked the wrong tool on step three and never recovered.</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Researchers at CSIRO's Data61 go further in their AgentOps taxonomy, arguing you should also record goals, plans, guardrail decisions and memory, and pointing out that the EU AI Act already expects high-risk systems to log events automatically over their lifetime. Microsoft's Yina Arenas makes the point I'd underline for product people: agent observability adds evaluation and governance on top of the usual health metrics. A trace tells you what happened. Evaluations run across thousands of traces tell you whether it was any good.</p>
+<div style="margin-top:34px;font-family:Newsreader,serif;font-size:25px;line-height:1.25;max-width:52ch">"If you can't replay a decision, you can't defend it."</div>
+<div style="margin-top:34px;font-size:17px;font-weight:600">Where it gets awkward</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">The richest telemetry is also the most sensitive, because prompts and tool outputs are often your customers' data. The standards work is catching up. OpenTelemetry's GenAI conventions now define shared span types like <code>invoke_agent</code> and <code>execute_tool</code>, so different frameworks report the same shape, and a May 2026 post on the OpenTelemetry blog is clear that by default "no prompt content or tool arguments are captured". OpenAI's Agents SDK takes the opposite default, recording model and tool inputs and outputs unless you switch it off. Anthropic describes watching decision patterns "without monitoring the contents of individual conversations".</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">I think Anthropic's stance is the right starting point for anyone in a regulated business. Record the structure of every decision by default, and treat content as something you switch on deliberately and keep for a set time. One caveat: the OpenTelemetry agent conventions are still marked as in development, so expect some names to move.</p>
+<div style="margin-top:34px;font-size:17px;font-weight:600">The nugget</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Before an agent gets any more autonomy, ask the team to show you two traces: one run that went well and one that went wrong. If they can't pull them up in a few minutes, the agent isn't ready for more trust, whatever its eval score says. And decide on day one what goes into the trace and what stays out, because retrofitting that later is far harder than it sounds.</p>
+</BlogPost>
