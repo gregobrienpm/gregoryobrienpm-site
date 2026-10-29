@@ -95,7 +95,9 @@ body{margin:0}
 [data-cards]>*{grid-column:auto !important}
 [data-split],[data-pair]{grid-template-columns:1fr !important;background-image:none !important;gap:34px !important}
 [data-split][style*="padding:14px 0"]{gap:26px !important}
+[data-pair]{gap:0 !important}
 [data-pair]>*{border-right:0 !important}
+[data-pair]>*+*{border-top:1px solid var(--rule) !important}
 [data-note-row]{grid-template-columns:1fr !important;gap:18px !important}
 [data-note-row]>div:first-child{height:auto !important;aspect-ratio:16 / 9 !important}
 [data-shot]{height:auto !important;aspect-ratio:16 / 9}
@@ -117,7 +119,7 @@ body{margin:0}
 [style*="padding:20px 56px 14px;"],[style*="padding:20px 56px 14px"]{padding:20px 40px 14px !important}
 [style*="padding:16px 56px;"],[style*="padding:16px 56px;"]{padding:16px 40px !important}
 [style*="padding:40px 56px;"]{padding:40px 40px !important}
-[style*="padding:0px 56px;"],[style*="padding:0 56px;"]{padding:0 40px !important}
+[style*="padding:0px 56px;"],[style*="padding:0 56px;"],[style="padding:0 56px"]{padding:0 40px !important}
 [style*="padding:40px 56px 48px"]{padding:40px 40px 48px !important}
 [style*="padding:56px 56px 34px"]{padding:56px 40px 34px !important}
 }
@@ -138,7 +140,7 @@ body{margin:0}
 [style*="padding:20px 56px 14px;"],[style*="padding:20px 56px 14px"]{padding:20px 24px 14px !important}
 [style*="padding:16px 56px;"],[style*="padding:16px 56px;"]{padding:16px 24px !important}
 [style*="padding:40px 56px;"]{padding:40px 24px !important}
-[style*="padding:0px 56px;"],[style*="padding:0 56px;"]{padding:0 24px !important}
+[style*="padding:0px 56px;"],[style*="padding:0 56px;"],[style="padding:0 56px"]{padding:0 24px !important}
 [style*="padding:40px 56px 48px"]{padding:40px 24px 48px !important}
 [style*="padding:56px 56px 34px"]{padding:56px 24px 34px !important}
 [data-note-row]>div:first-child{height:auto !important;aspect-ratio:16 / 9 !important}
