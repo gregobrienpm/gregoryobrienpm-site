@@ -1,0 +1,27 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+<BlogPost
+  title="When the customer is a bot — Greg O'Brien"
+  date="29 Oct 2026"
+  subtitle="Online fraud prevention was built to keep software out. Some of the best customers are now going to be software, so the question has to move from ‘is this a human?’ to ‘whose bot is this, and what is it allowed to do?’"
+  heroSrc="/images/think/customer-bot-hero.webp"
+  heroAlt="A robot at the front of a queue showing an ID card to a robot doorman, who gives it a green tick to enter"
+  heroWidth={1600}
+  heroHeight={900}
+  nextHref="/think/the-chatbot-is-dead-long-live-the-chatbot"
+  nextTitle="The chatbot is dead. Long live the chatbot."
+  nextDate="11 Oct 2026"
+>
+<Fragment slot="heading">When the customer is a <span style="font-style:italic">bot</span></Fragment>
+<p style="margin:0;font-size:15.5px;line-height:1.7;color:var(--body)">A lot of online commerce rests on one assumption: a real customer is a person. CAPTCHAs, device fingerprinting and behavioural checks all exist to tell people apart from software, and for good reason. <a href="https://www.imperva.com/resources/resource-library/reports/2025-bad-bot-report/" class="src">Imperva’s 2025 Bad Bot Report</a>, which is the vendor’s own data, found that automated traffic had overtaken human traffic for the first time in a decade, and that bad bots alone made up 37% of all internet traffic.</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">That assumption is now breaking from the other side. In September 2025 OpenAI and Stripe launched checkout inside ChatGPT, built on a new Agentic Commerce Protocol. The agent never sees the card. It gets a token that <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout" class="src">Stripe says</a> is scoped to one merchant and one cart total. Google had announced its own Agent Payments Protocol a fortnight earlier. More and more of the software arriving at checkout will be working for a real customer who sent it there on purpose.</p>
+<div style="margin-top:34px;font-size:17px;font-weight:600">The old question stops working</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">The row between Amazon and Perplexity shows what happens when the old question meets the new customer. Amazon sued in November 2025, alleging that Perplexity’s Comet browser shopped on Amazon disguised as an ordinary Chrome user and didn’t identify itself as an agent, as <a href="https://www.retaildive.com/news/amazon-sues-perplexity-ai-shopping-agents/804871/" class="src">Retail Dive reported</a>. Perplexity’s reply was that people have a right to an assistant acting on their behalf. I think both have a point, and neither point is really about whether a human was present. Amazon’s complaint is about an agent that wouldn’t say what it was. Perplexity’s is about a customer’s right to send one.</p>
+<div style="margin-top:34px;font-family:Newsreader,serif;font-size:25px;line-height:1.25;max-width:52ch">"‘Is this a human?’ was always a stand-in for the question we actually cared about: is this allowed?"</div>
+<div style="margin-top:34px;font-size:17px;font-weight:600">What the new question looks like</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Google’s <a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol" class="src">AP2 announcement</a> is blunt about it. Payment systems assume a person clicks ‘buy’, so once an agent does the clicking you need proof that the user authorised this particular purchase, and a clear answer on who’s responsible when it goes wrong. Its answer is a signed mandate: a record of what the user asked for, with limits such as a price ceiling, that travels with the transaction.</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Authority isn’t the whole problem, though, because an authorised agent can still be talked into a bad purchase. Microsoft researchers built a simulated marketplace and found that several leading models could be steered by fake reviews, invented credentials and prompt injection, and often took the first option that looked good enough, as <a href="https://www.theregister.com/2025/11/06/microsoft_unveils_the_magentic_marketplace/" class="src">The Register reported</a>. Fraud teams have always asked whether the customer was being impersonated. Now they also have to ask whether the customer’s agent was manipulated, and that’s an attack on a different target.</p>
+<div style="margin-top:34px;font-size:17px;font-weight:600">The nugget</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">If you work anywhere near checkout or fraud, walk one legitimate agent purchase through your current controls. Note every point where it would be blocked for being a bot, and every point where it would sail through without anyone being able to say who authorised it. I’d bet both lists are longer than you’d like.</p>
+</BlogPost>
