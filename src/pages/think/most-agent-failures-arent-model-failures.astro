@@ -1,0 +1,27 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+<BlogPost
+  title="Most agent failures aren't model failures — Greg O'Brien"
+  date="6 Nov 2026"
+  subtitle="When an agent gets something wrong, the instinct is to wait for a better model. Usually the problem is in what we built around it, and that part is ours to fix."
+  heroSrc="/images/think/agent-failures-hero.webp"
+  heroAlt="One robot peers through a magnifying glass at a cheerful robot sitting on a tangle of cables, with tools scattered on the floor"
+  heroWidth={1600}
+  heroHeight={900}
+  nextHref="/think/when-the-customer-is-a-bot"
+  nextTitle="When the customer is a bot"
+  nextDate="29 Oct 2026"
+>
+<Fragment slot="heading">Most agent failures aren’t model <span style="font-style:italic">failures</span></Fragment>
+<p style="margin:0;font-size:15.5px;line-height:1.7;color:var(--body)">When an agent gets something wrong, the easy explanation is the model. It isn’t clever enough yet, so wait six months for the next one. I still catch myself thinking it. The evidence keeps pointing somewhere less comfortable.</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">MIT’s NANDA initiative looked at enterprise generative AI pilots in 2025 and found about 95% had no measurable effect on profit. <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" class="src">Fortune’s summary</a> is blunt: the core issue wasn’t the quality of the models but a ‘learning gap’, with tools that didn’t fit or adapt to how the work is actually done. Gartner expects more than 40% of agentic AI projects to be cancelled by the end of 2027, and <a href="https://www.rcrwireless.com/20250627/business/agentic-ai" class="src">the reasons it gives</a> are rising costs, unclear business value and weak risk controls. A smarter model fixes none of those.</p>
+<div style="margin-top:34px;font-size:17px;font-weight:600">Where it actually breaks</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Researchers at UC Berkeley studied failed runs of multi-agent systems and sorted what went wrong. <a href="https://arxiv.org/abs/2503.13657" class="src">Their taxonomy</a> puts the failures into system design, agents misunderstanding each other, and poor checking of the result. They conclude that failure “is not merely a function of challenges in the underlying model”, and they got better results from better design on the same model.</p>
+<p style="margin:22px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Anthropic found much the same from the builder’s side. In a post on <a href="https://www.anthropic.com/engineering/writing-tools-for-agents" class="src">writing tools for agents</a>, it says even small changes to how a tool is described can make a dramatic difference, and it credits careful rewording of tool descriptions for a state-of-the-art result on a coding benchmark. The model stayed the same. The words around it changed.</p>
+<div style="margin-top:34px;font-family:Newsreader,serif;font-size:25px;line-height:1.25;max-width:52ch">"A better model makes a well-built agent better. It rarely rescues a badly built one."</div>
+<div style="margin-top:34px;font-size:17px;font-weight:600">Where I’d look first</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">I think the useful habit is to treat every failure as a design problem until it’s proven otherwise. Start with what the agent was given: the information it had, and whether it arrived in a form it could use. Then look at its tools, and whether each one was described well enough to be picked for the right job. Last, look at what happened after it answered. Something should check the output before a person relies on it, and there should be a clear point where the agent stops and hands over. Most of that is product work as much as engineering, and I’d like to see more product managers own it.</p>
+<div style="margin-top:34px;font-size:17px;font-weight:600">The nugget</div>
+<p style="margin:9px 0 0;font-size:15.5px;line-height:1.7;color:var(--body)">Take the last five things your agent got wrong and sort them into two piles: problems a better model would fix, and problems with what you gave it or the checks around it. I’d bet the second pile is bigger. Start there.</p>
+</BlogPost>
